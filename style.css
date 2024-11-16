@@ -56,28 +56,12 @@ canvas {
     box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3); /* Subtle shadow */
 }
 
-/* Left Bush */
-.bush-left {
-    width: 80px;
-    height: 40px;
-    bottom: 30px;
-    left: 50px;
-}
-
-/* Middle Bush */
-.bush-middle {
+/* Main Bush (centered under the canvas) */
+.bush-main {
     width: 100px;
     height: 50px;
     bottom: 40px;
-    left: 300px;
-}
-
-/* Right Bush */
-.bush-right {
-    width: 80px;
-    height: 40px;
-    bottom: 30px;
-    right: 50px;
+    left: 350px; /* Centered under the canvas */
 }
 
 /* Tree */
