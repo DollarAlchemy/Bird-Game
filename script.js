@@ -5,12 +5,12 @@ const ctx = canvas.getContext("2d");
 // Game Variables
 let score = 0;
 let birds = [];
-const maxScore = 10; // Max score for triggering click noise
+const winningScore = 20; // Score to beat the game
 
 // Audio Elements
-const ambientAudio = new Audio("sounds/ambient.mp3"); // Update file paths
-const birdNoise = new Audio("sounds/bird.mp3"); // Update file paths
-const clickNoise = new Audio("sounds/click.mp3"); // Update file paths
+const ambientAudio = new Audio("sounds/ambient.mp3");
+const birdNoise = new Audio("sounds/bird.mp3");
+const clickNoise = new Audio("sounds/click.mp3");
 
 // Start Ambient Sound After User Interaction
 document.addEventListener("click", () => {
@@ -85,15 +85,33 @@ canvas.addEventListener("click", (e) => {
                 console.error("Error playing bird noise:", error);
             });
 
-            // Play click noise if score reaches max
-            if (score >= maxScore) {
-                clickNoise.play().catch((error) => {
-                    console.error("Error playing click noise:", error);
-                });
+            // Check if the player has won
+            if (score === winningScore) {
+                endGame();
             }
         }
     });
 });
+
+// End Game
+function endGame() {
+    // Stop spawning birds
+    clearInterval(birdSpawner);
+
+    // Display winning message
+    alert("Congratulations! You've beaten the game!");
+
+    // Optionally reset the game
+    resetGame();
+}
+
+// Reset Game
+function resetGame() {
+    score = 0;
+    birds = [];
+    document.getElementById("score").textContent = score;
+    startGame();
+}
 
 // Game Loop
 function gameLoop() {
@@ -115,8 +133,9 @@ function gameLoop() {
 }
 
 // Start Game
+let birdSpawner;
 function startGame() {
-    setInterval(spawnBird, 1000); // Spawn a bird every second
+    birdSpawner = setInterval(spawnBird, 1000); // Spawn a bird every second
     gameLoop();
 }
 
