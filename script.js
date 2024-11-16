@@ -8,13 +8,19 @@ let birds = [];
 const maxScore = 10; // Max score for triggering click noise
 
 // Audio Elements
-const ambientAudio = new Audio("ambient.mp3");
-const birdNoise = new Audio("bird.mp3");
-const clickNoise = new Audio("click.mp3");
+const ambientAudio = new Audio("sounds/ambient.mp3"); // Update file paths
+const birdNoise = new Audio("sounds/bird.mp3"); // Update file paths
+const clickNoise = new Audio("sounds/click.mp3"); // Update file paths
 
-// Start Ambient Sound
-ambientAudio.loop = true; // Loop the ambient audio
-ambientAudio.play();
+// Start Ambient Sound After User Interaction
+document.addEventListener("click", () => {
+    if (ambientAudio.paused) {
+        ambientAudio.loop = true; // Loop the ambient sound
+        ambientAudio.play().catch((error) => {
+            console.error("Error playing ambient audio:", error);
+        });
+    }
+});
 
 // Tree and Bush Drawing
 function drawBackground() {
@@ -75,11 +81,15 @@ canvas.addEventListener("click", (e) => {
             birds.splice(index, 1); // Remove bird
             score++; // Increment score
             document.getElementById("score").textContent = score; // Update score display
-            birdNoise.play(); // Play bird noise
+            birdNoise.play().catch((error) => {
+                console.error("Error playing bird noise:", error);
+            });
 
             // Play click noise if score reaches max
             if (score >= maxScore) {
-                clickNoise.play();
+                clickNoise.play().catch((error) => {
+                    console.error("Error playing click noise:", error);
+                });
             }
         }
     });
@@ -110,4 +120,5 @@ function startGame() {
     gameLoop();
 }
 
+// Initialize the game
 startGame();
