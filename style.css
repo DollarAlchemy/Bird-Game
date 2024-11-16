@@ -43,28 +43,24 @@ canvas {
     box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3); /* Subtle shadow */
 }
 
-/* First Bush (close to the front) */
-.bush-front {
+/* Bush Positions */
+.bush-1 {
     width: 80px;
     height: 40px;
-    bottom: 20px;
-    left: 50px;
+    bottom: 50px;
+    left: 100px; /* First bush to the left */
 }
 
-/* Second Bush (mid-ground) */
-.bush-mid {
-    width: 60px;
-    height: 30px;
-    bottom: 60px;
-    left: 120px;
-    opacity: 0.8; /* Slight fade for depth */
+.bush-2 {
+    width: 70px;
+    height: 35px;
+    bottom: 70px;
+    left: 300px; /* Second bush in the middle */
 }
 
-/* Third Bush (background) */
-.bush-back {
-    width: 40px;
-    height: 20px;
-    bottom: 100px;
-    left: 200px;
-    opacity: 0.6; /* More faded for depth */
+.bush-3 {
+    width: 90px;
+    height: 45px;
+    bottom: 50px;
+    right: 120px; /* Third bush to the right */
 }
