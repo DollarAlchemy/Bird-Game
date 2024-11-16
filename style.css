@@ -34,3 +34,37 @@ canvas {
     font-weight: bold;
     color: #333;
 }
+
+/* Bush Styling */
+.bush {
+    position: absolute;
+    background-color: #228B22; /* Green bush */
+    border-radius: 50%;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+}
+
+/* First Bush (close to the front) */
+.bush-front {
+    width: 80px;
+    height: 40px;
+    bottom: 20px;
+    left: 50px;
+}
+
+/* Second Bush (mid-ground) */
+.bush-mid {
+    width: 60px;
+    height: 30px;
+    bottom: 60px;
+    left: 120px;
+    opacity: 0.8; /* Slight fade for depth */
+}
+
+/* Third Bush (background) */
+.bush-back {
+    width: 40px;
+    height: 20px;
+    bottom: 100px;
+    left: 200px;
+    opacity: 0.6; /* More faded for depth */
+}
