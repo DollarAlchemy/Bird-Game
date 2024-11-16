@@ -1,0 +1,36 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #87CEEB; /* Sky blue */
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    margin: 20px;
+    font-size: 36px;
+    color: #333;
+}
+
+#game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    position: relative;
+}
+
+canvas {
+    background-color: #87CEEB; /* Sky background */
+    border: 2px solid #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Score Display */
+#score-container {
+    margin-top: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
