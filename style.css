@@ -63,25 +63,3 @@ canvas {
     bottom: 40px;
     left: 350px; /* Centered under the canvas */
 }
-
-/* Tree */
-#tree {
-    position: absolute;
-    width: 60px;
-    height: 100px;
-    background-color: #8B4513; /* Tree trunk */
-    bottom: 100px; /* Raised slightly above the yellow ground */
-    left: 150px; /* Centered under foliage */
-    z-index: 1; /* Bring tree to front */
-}
-
-/* Tree Foliage */
-#tree-foliage {
-    position: absolute;
-    width: 120px;
-    height: 120px;
-    background-color: #228B22; /* Green foliage */
-    border-radius: 50%;
-    bottom: 180px; /* Positioned directly above the trunk */
-    left: 110px; /* Centered over trunk */
-}
